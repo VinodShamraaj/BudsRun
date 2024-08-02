@@ -18,6 +18,15 @@ public class InputController : MonoBehaviour
         {
             doJump = true;
         }
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                doJump = true;
+            }
+        }
     }
 
     void FixedUpdate()

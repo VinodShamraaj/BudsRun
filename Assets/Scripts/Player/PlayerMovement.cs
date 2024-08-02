@@ -1,22 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float jumpForce = 400f;
+    [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float moveSpeed = 100f;
-    [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
+    [SerializeField] private float jumpTime = 100f;
+    [Range(0, .3f)][SerializeField] private float movementSmoothing = .05f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundChecker;
 
     public UnityEvent OnLandEvent;
 
     private bool isGrounded;
+    private bool isJumping;
     private float groundedRadius = 0.2f;
+    private float jumpTimeCounter = 0;
     private Rigidbody2D rb;
-    private Vector3 m_Velocity = Vector3.zero;
+    private Vector3 velocity = Vector3.zero;
 
 
     private void Awake()
@@ -48,15 +52,29 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Move(bool jump)
+    public void Move(bool jumpStart, bool jumpHold, bool jumpEnd)
     {
         Vector3 targetVelocity = new Vector2(moveSpeed * Time.fixedDeltaTime * 10f, rb.velocity.y);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, movementSmoothing);
+        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-        if (jump)
+        if (jumpStart)
         {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+
             isGrounded = false;
             rb.AddForce(new Vector2(0f, jumpForce));
+        }
+
+        if (jumpHold){
+            if (jumpTimeCounter > 0 && isJumping){
+                rb.AddForce(new Vector2(0f, jumpForce));
+                jumpTimeCounter -= Time.deltaTime;
+            }
+        }
+
+        if (jumpEnd){
+            isJumping = false;
         }
     }
 }

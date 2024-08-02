@@ -53,8 +53,18 @@ MonoBehaviour:
   powerUpMusicVolume: 1
   bossMusic: {fileID: 0}
   bossMusicVolume: 1
-  endingMusic: {fileID: 0}
-  endingMusicVolume: 1
+  endingMusic: {fileID: 8300000, guid: 43b326accd932f64bbbdbe8a806b331c, type: 3}
+  endingMusicVolume: 0.12
+  jumpSound: {fileID: 8300000, guid: de5b203c1bb24a249b042897250bccee, type: 3}
+  jumpSoundVolume: 0.081
+  coinSound: {fileID: 8300000, guid: 4b85bd09405e43d419f4a1f587c48a03, type: 3}
+  coinSoundVolume: 0.095
+  hitSound: {fileID: 0}
+  hitSoundVolume: 1
+  powerUpSound: {fileID: 8300000, guid: f5c25c6b78fce5940a98f659fde7c9f4, type: 3}
+  powerUpSoundVolume: 0.113
+  menuClick: {fileID: 8300000, guid: 7293f5e8d629de74d8a5e8e1b6bc605c, type: 3}
+  menuClickVolume: 0.117
 --- !u!82 &1391812547103732573
 AudioSource:
   m_ObjectHideFlags: 0

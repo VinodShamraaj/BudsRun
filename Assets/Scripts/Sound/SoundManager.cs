@@ -24,6 +24,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float coinSoundVolume = 1f;
     [SerializeField] private AudioClip hitSound;
     [SerializeField][Range(0f, 1f)] private float hitSoundVolume = 1f;
+    [SerializeField] private AudioClip powerUpSound;
+    [SerializeField][Range(0f, 1f)] private float powerUpSoundVolume = 1f;
 
     [Header("Menu")]
     [SerializeField] private AudioClip menuClick;
@@ -88,6 +90,10 @@ public class SoundManager : MonoBehaviour
     public void PlayHitSound()
     {
         PlayClip(hitSound, hitSoundVolume);
+    }
+    public void PlayPowerUpSound()
+    {
+        PlayClip(powerUpSound, powerUpSoundVolume);
     }
 
     public void PlayMenuClick()

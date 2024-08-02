@@ -262,6 +262,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: bossMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 43b326accd932f64bbbdbe8a806b331c, type: 3}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: coinSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b85bd09405e43d419f4a1f587c48a03, type: 3}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: de5b203c1bb24a249b042897250bccee, type: 3}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: menuClick
+      value: 
+      objectReference: {fileID: 8300000, guid: 7293f5e8d629de74d8a5e8e1b6bc605c, type: 3}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: bossMusicVolume
+      value: 0.102
+      objectReference: {fileID: 0}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: coinSoundVolume
+      value: 0.122
+      objectReference: {fileID: 0}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: jumpSoundVolume
+      value: 0.146
+      objectReference: {fileID: 0}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: menuClickVolume
+      value: 0.132
+      objectReference: {fileID: 0}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: endingMusicVolume
+      value: 0.112
+      objectReference: {fileID: 0}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: gameplayMusicVolume
+      value: 0.083
+      objectReference: {fileID: 0}
+    - target: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
+      propertyPath: mainMenuMusicVolume
+      value: 0.063
+      objectReference: {fileID: 0}
     - target: {fileID: 8983184084217366780, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
       propertyPath: m_Name
       value: SoundManager

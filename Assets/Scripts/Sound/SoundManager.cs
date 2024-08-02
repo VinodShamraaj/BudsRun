@@ -17,16 +17,25 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip endingMusic;
     [SerializeField][Range(0f, 1f)] private float endingMusicVolume = 1f;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField][Range(0f, 1f)] private float jumpSoundVolume = 1f;
+    [SerializeField] private AudioClip coinSound;
+    [SerializeField][Range(0f, 1f)] private float coinSoundVolume = 1f;
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField][Range(0f, 1f)] private float hitSoundVolume = 1f;
+
+    [Header("Menu")]
+    [SerializeField] private AudioClip menuClick;
+    [SerializeField][Range(0f, 1f)] private float menuClickVolume = 1f;
+
+
     private void Awake()
     {
         ManageSingleton();
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void Start()
-    {
-        PlayMainMenuMusic();
-    }
     private void ManageSingleton()
     {
         if (instance != null)
@@ -43,22 +52,22 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMainMenuMusic()
     {
-        PlayClip(mainMenuMusic, mainMenuMusicVolume);
+        PlayBackgroundMusic(mainMenuMusic, mainMenuMusicVolume);
     }
 
     public void PlayGameplayMusic()
     {
-        PlayClip(gameplayMusic, gameplayMusicVolume);
+        PlayBackgroundMusic(gameplayMusic, gameplayMusicVolume);
     }
 
     public void PlayPowerUpMusic()
     {
-        PlayClip(powerUpMusic, powerUpMusicVolume);
+        PlayBackgroundMusic(powerUpMusic, powerUpMusicVolume);
     }
 
     public void PlayBossMusic()
     {
-        PlayClip(bossMusic, bossMusicVolume);
+        PlayBackgroundMusic(bossMusic, bossMusicVolume);
     }
 
     public void PlayEndingMusic()
@@ -66,9 +75,37 @@ public class SoundManager : MonoBehaviour
         PlayClip(endingMusic, endingMusicVolume);
     }
 
+    public void PlayJumpSound()
+    {
+        PlayClip(jumpSound, jumpSoundVolume);
+    }
+
+    public void PlayCoinSound()
+    {
+        PlayClip(coinSound, coinSoundVolume);
+    }
+
+    public void PlayHitSound()
+    {
+        PlayClip(hitSound, hitSoundVolume);
+    }
+
+    public void PlayMenuClick()
+    {
+        PlayClip(menuClick, menuClickVolume);
+    }
+
     private static void PlayClip(AudioClip clip, float volume)
     {
         Vector3 cameraPos = Camera.main.transform.position;
         AudioSource.PlayClipAtPoint(clip, cameraPos, volume);
+    }
+
+    private static void PlayBackgroundMusic(AudioClip clip, float volume)
+    {
+        audioSource.loop = true;
+        audioSource.clip = clip;
+        audioSource.volume = volume;
+        audioSource.Play();
     }
 }

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2049b7fa0e3ffed4f8ad29829f9b49ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolume: 1
   mainMenuMusic: {fileID: 8300000, guid: d38b00fc8365c444fa1907cafc61bb8f, type: 3}
   mainMenuMusicVolume: 0.053
   gameplayMusic: {fileID: 0}
@@ -65,7 +66,8 @@ MonoBehaviour:
   powerUpSoundVolume: 0.113
   hurtSound:
   - {fileID: 8300000, guid: 690962a85885bf04ca57e00231e61ebd, type: 3}
-  - {fileID: 8300000, guid: 690962a85885bf04ca57e00231e61ebd, type: 3}
+  - {fileID: 8300000, guid: 74ea79294a6ffe348a356231e73756ad, type: 3}
+  - {fileID: 8300000, guid: 11c50f85199410d4ab69dc40fa9f9f10, type: 3}
   hurtSoundVolume: 1
   dieSound: {fileID: 8300000, guid: ecaed420e6949ac438e4e7e445fa0448, type: 3}
   dieSoundVolume: 0.134

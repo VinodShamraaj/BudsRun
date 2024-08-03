@@ -48,20 +48,20 @@ MonoBehaviour:
   masterVolume: 1
   mainMenuMusic: {fileID: 8300000, guid: d38b00fc8365c444fa1907cafc61bb8f, type: 3}
   mainMenuMusicVolume: 0.053
-  gameplayMusic: {fileID: 0}
-  gameplayMusicVolume: 1
-  powerUpMusic: {fileID: 0}
-  powerUpMusicVolume: 1
-  bossMusic: {fileID: 0}
+  gameplayMusic: {fileID: 8300000, guid: b5f50fbea70fb894aa692b354e561d29, type: 3}
+  gameplayMusicVolume: 0.089
+  powerUpMusic: {fileID: 8300000, guid: b01ca18c821102b4192870e241fd7212, type: 3}
+  powerUpMusicVolume: 0.089
+  bossMusic: {fileID: 8300000, guid: b01ca18c821102b4192870e241fd7212, type: 3}
   bossMusicVolume: 1
   endingMusic: {fileID: 8300000, guid: 43b326accd932f64bbbdbe8a806b331c, type: 3}
-  endingMusicVolume: 0.12
+  endingMusicVolume: 0.081
   jumpSound: {fileID: 8300000, guid: de5b203c1bb24a249b042897250bccee, type: 3}
   jumpSoundVolume: 0.081
-  coinSound: {fileID: 8300000, guid: 4b85bd09405e43d419f4a1f587c48a03, type: 3}
+  coinSound: {fileID: 8300000, guid: db479dd9e1887e142a9e3b9a8cb225c9, type: 3}
   coinSoundVolume: 0.095
-  hitSound: {fileID: 0}
-  hitSoundVolume: 1
+  hitSound: {fileID: 8300000, guid: 1aedf2f2e2fd4554e84b53759bebc418, type: 3}
+  hitSoundVolume: 0.119
   powerUpSound: {fileID: 8300000, guid: f5c25c6b78fce5940a98f659fde7c9f4, type: 3}
   powerUpSoundVolume: 0.113
   hurtSound:

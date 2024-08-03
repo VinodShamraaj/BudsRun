@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  soundManager: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
 --- !u!50 &8033405694272100308
 Rigidbody2D:
   serializedVersion: 4

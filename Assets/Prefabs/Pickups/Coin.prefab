@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinScore: 50
   scoreManger: {fileID: 7246295532246982087, guid: 18bbd8218c4cc41a896a73f9431f2bdd, type: 3}
+  soundManager: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
 --- !u!212 &7526332805914387434
 SpriteRenderer:
   m_ObjectHideFlags: 0

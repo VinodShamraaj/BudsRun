@@ -3,6 +3,8 @@ using UnityEngine;
 public class PowerUpFlightTicket : MonoBehaviour, IPowerUpDuration
 {
     [SerializeField] private float duration = 5f;
+    [SerializeField] private SoundManager soundManager;
+
     PlayerController playerController;
 
     private bool hasPickup = false;
@@ -16,6 +18,7 @@ public class PowerUpFlightTicket : MonoBehaviour, IPowerUpDuration
     {
         if (hasPickup && duration < 0)
         {
+            soundManager.PlayGameplayMusic();
             hasPickup = true;
             playerController.ToggleCollision();
             gameObject.SetActive(false);
@@ -31,6 +34,7 @@ public class PowerUpFlightTicket : MonoBehaviour, IPowerUpDuration
     {
         if (collision.CompareTag("Player"))
         {
+            soundManager.PlayPowerUpMusic();
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             playerController = collision.GetComponent<PlayerController>();
             playerController.ToggleCollision();

@@ -147,6 +147,7 @@ MonoBehaviour:
   duration: 5
   distanceMagnet: 5
   coinSpeed: 1
+  soundManager: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
 --- !u!50 &789610431486381836
 Rigidbody2D:
   serializedVersion: 4

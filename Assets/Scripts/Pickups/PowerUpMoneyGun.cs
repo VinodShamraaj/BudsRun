@@ -5,6 +5,7 @@ public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
     [SerializeField] float duration = 5f;
     [SerializeField] float distanceMagnet = 5f;
     [SerializeField] float coinSpeed = 0.2f;
+    [SerializeField] private SoundManager soundManager;
 
     private bool hasPickup = false;
 
@@ -17,6 +18,7 @@ public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
     {
         if (hasPickup && duration < 0)
         {
+            soundManager.PlayGameplayMusic();
             hasPickup = true;
             gameObject.SetActive(false);
             Destroy(gameObject);
@@ -44,6 +46,7 @@ public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
     {
         if (collision.CompareTag("Player"))
         {
+            soundManager.PlayPowerUpMusic();
             hasPickup = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }

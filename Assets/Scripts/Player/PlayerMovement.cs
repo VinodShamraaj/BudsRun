@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetVelocity = new Vector2(moveSpeed * Time.fixedDeltaTime * 10f, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-        if (jumpStart)
+        if (isGrounded && jumpStart)
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;

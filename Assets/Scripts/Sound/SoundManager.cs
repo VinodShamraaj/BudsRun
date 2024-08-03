@@ -38,6 +38,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip menuClick;
     [SerializeField][Range(0f, 1f)] private float menuClickVolume = 1f;
 
+    private float currentTime = 0f;
+    private AudioClip currentMusic;
 
     private void Awake()
     {
@@ -128,6 +130,27 @@ public class SoundManager : MonoBehaviour
     {
         masterVolume = volume;
     }
+
+    public void PauseMusic()
+    {
+        audioSource.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        audioSource.UnPause();
+    }
+
+    public void MuteMusic()
+    {
+        audioSource.mute = true;
+    }
+
+    public void UnMuteMusic()
+    {
+        audioSource.mute = false;
+    }
+
 
     private void PlayClip(AudioClip clip, float volume)
     {

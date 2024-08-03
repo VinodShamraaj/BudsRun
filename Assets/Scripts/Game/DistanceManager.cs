@@ -30,7 +30,7 @@ public class Distance : MonoBehaviour
     {
         if (distanceText != null)
         {
-            distanceText.text = "Distance: " + distance.ToString("F2") + " meters";
+            distanceText.text = distance.ToString("F2") + " meters";
         }
     }
 }

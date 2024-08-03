@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7978142454950786320}
   - component: {fileID: 7526332805914387434}
   - component: {fileID: 6762323018812753382}
+  - component: {fileID: 6919976992986348919}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinScore: 50
-  scoreManger: {fileID: 0}
+  scoreManger: {fileID: 7246295532246982087, guid: 18bbd8218c4cc41a896a73f9431f2bdd, type: 3}
 --- !u!212 &7526332805914387434
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -145,3 +146,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.872, y: 0.6159438}
   m_EdgeRadius: 0
+--- !u!50 &6919976992986348919
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094365794367545090}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0

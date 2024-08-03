@@ -154,14 +154,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1474258272}
-  - {fileID: 1367946681}
   - {fileID: 1153811632}
+  - {fileID: 1367946681}
   - {fileID: 485157021}
   m_Father: {fileID: 1991280309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.39484257}
   m_AnchorMax: {x: 0.5103666, y: 0.5}
-  m_AnchoredPosition: {x: -5.6815, y: -24}
+  m_AnchoredPosition: {x: 10, y: -53.417}
   m_SizeDelta: {x: 798.402, y: 106.834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482007346
@@ -184,8 +184,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
-  m_Spacing: {x: 0, y: 0}
+  m_CellSize: {x: 160, y: 160}
+  m_Spacing: {x: 40, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &482007347
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 485157023}
   - component: {fileID: 485157022}
   m_Layer: 5
-  m_Name: 'Sound On Button '
+  m_Name: 'Sound On/Off Button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -201990067, guid: 4cc3a0d32727b45f3a8a12b981ba414d, type: 3}
+  m_Sprite: {fileID: -804744289, guid: b39a16dd3634a45e7836785d5f8e8a37, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 1153811634}
   - component: {fileID: 1153811633}
   m_Layer: 5
-  m_Name: Sound Off Button
+  m_Name: Replay Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 712471486, guid: 4cc3a0d32727b45f3a8a12b981ba414d, type: 3}
+  m_Sprite: {fileID: 1350603709, guid: b39a16dd3634a45e7836785d5f8e8a37, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -304072025, guid: 4cc3a0d32727b45f3a8a12b981ba414d, type: 3}
+  m_Sprite: {fileID: -1207163976, guid: b39a16dd3634a45e7836785d5f8e8a37, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1011552459, guid: 4cc3a0d32727b45f3a8a12b981ba414d, type: 3}
+  m_Sprite: {fileID: -1897681395, guid: b39a16dd3634a45e7836785d5f8e8a37, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

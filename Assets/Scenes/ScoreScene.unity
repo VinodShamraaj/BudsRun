@@ -347,7 +347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 98, y: -63}
+  m_AnchoredPosition: {x: 1566, y: -153}
   m_SizeDelta: {x: 74.494995, y: 67.87799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511983162
@@ -442,7 +442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 434, y: -63.174}
+  m_AnchoredPosition: {x: 1902, y: -153.17401}
   m_SizeDelta: {x: 74.358, y: 67.762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604912641
@@ -767,7 +767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 211, y: -63}
+  m_AnchoredPosition: {x: 1679, y: -153}
   m_SizeDelta: {x: 74.494995, y: 67.87799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1189680476
@@ -910,7 +910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 434, y: -63.174}
+  m_AnchoredPosition: {x: 1902, y: -153.17401}
   m_SizeDelta: {x: 74.358, y: 67.762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523089756
@@ -985,7 +985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 434, y: -63.174}
+  m_AnchoredPosition: {x: 1902, y: -153.17401}
   m_SizeDelta: {x: 74.358, y: 67.762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748818285
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898873902}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76ea835498b8a4360858482f2866a2c5, type: 3}
   m_Name: 
@@ -1088,7 +1088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -63.116}
+  m_AnchoredPosition: {x: 1793, y: -153.11603}
   m_SizeDelta: {x: 74.494995, y: 67.87799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1917581068
@@ -1334,6 +1334,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1469858850022115201, guid: 1ca4fab7f3c764e2ea5e623f47ad8ce7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4413276388423044982, guid: 1ca4fab7f3c764e2ea5e623f47ad8ce7, type: 3}
       propertyPath: m_Name
       value: LifePointController
@@ -1378,7 +1382,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1469858850022115201, guid: 1ca4fab7f3c764e2ea5e623f47ad8ce7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

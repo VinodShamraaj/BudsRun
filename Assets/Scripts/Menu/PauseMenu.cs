@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
 
     [SerializeField] GameObject pauseMenu;
-    SoundManager sound;
+    [SerializeField] SoundManager sound;
 
     // Update is called once per frame
     public void Pause()
@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
 
     void SoundOff()
     {
-       //sound off 
+        sound.MuteMusic();
     }
 
     void SoundOn()

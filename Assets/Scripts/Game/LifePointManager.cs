@@ -17,6 +17,7 @@ public class LifePointManager : MonoBehaviour
     void Start()
     {
         UpdateHearts();
+
     }
 
     void Update()
@@ -55,6 +56,11 @@ public class LifePointManager : MonoBehaviour
             Debug.Log("Life Point Increased!");
             UpdateHearts();
         }
+
+        else
+        {
+            Debug.Log("Maximum Health");
+        }
     }
 
     void UpdateHearts()
@@ -69,7 +75,6 @@ public class LifePointManager : MonoBehaviour
             {
                 hearts[i].sprite = emptyHeart;
             }
-
 
             hearts[i].enabled = (i < maxLifePoints);
         }

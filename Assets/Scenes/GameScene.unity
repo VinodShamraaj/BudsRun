@@ -749,6 +749,7 @@ MonoBehaviour:
   - {fileID: 5742910317385299301, guid: a0bf8da876960254d9175828ac3b4aa9, type: 3}
   obstacleSpawnTime: 4
   obstacleSpeed: 4.8
+  minObstacleSpawnTime: 2
 --- !u!4 &1775629536
 Transform:
   m_ObjectHideFlags: 0
@@ -772,9 +773,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 657050290319428824, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 831667591309537301, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652289447728332755, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
+      propertyPath: jumpTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652289447728332755, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
+      propertyPath: jumpForce
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5134366851024083424, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -815,6 +828,18 @@ PrefabInstance:
     - target: {fileID: 5134366851024083424, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593679129707949480, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
+      propertyPath: obstacleSpawner
+      value: 
+      objectReference: {fileID: 1775629535}
+    - target: {fileID: 5593679129707949480, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
+      propertyPath: backgroundScroll
+      value: 
+      objectReference: {fileID: 1257894695}
+    - target: {fileID: 5593679129707949480, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
+      propertyPath: difficultyIncreaseTimer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

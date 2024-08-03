@@ -1,11 +1,16 @@
 using UnityEngine;
 
-public class PowerUpFlightTicket : MonoBehaviour
+public class PowerUpFlightTicket : MonoBehaviour, IPowerUpDuration
 {
     [SerializeField] private float duration = 5f;
     PlayerController playerController;
 
     private bool hasPickup = false;
+
+    public bool GetHasPickup()
+    {
+        return hasPickup;
+    }
 
     private void Update()
     {

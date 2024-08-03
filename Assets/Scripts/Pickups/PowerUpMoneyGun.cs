@@ -1,12 +1,17 @@
 using UnityEngine;
 
-public class PowerUpMoneyGun : MonoBehaviour
+public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
 {
     [SerializeField] float duration = 5f;
     [SerializeField] float distanceMagnet = 5f;
     [SerializeField] float coinSpeed = 0.2f;
 
     private bool hasPickup = false;
+
+    public bool GetHasPickup()
+    {
+        return hasPickup;
+    }
 
     private void Update()
     {

@@ -5,35 +5,79 @@ using UnityEngine.UI;
 
 public class LifePointManager : MonoBehaviour
 {
-    public int lifePoints = 3;
-    public Text lifeText;
+    public int lifePoints = 3; // Current life points
+    public int maxLifePoints = 3; // Maximum life points
+    public bool takeDamage = false;
+    public bool takeHeart = false;
+    public Image[] hearts; // Array of heart UI images
+    public Sprite fullHeart; // Sprite for a full heart
+    public Sprite emptyHeart; // Sprite for an empty heart
+    public Transform player;
 
     void Start()
     {
-        UpdateLifeText();
+        UpdateHearts();
+    }
+
+    void Update()
+    {
+
+        if (takeDamage) 
+        {
+            ReduceLifePoint();
+        }
+        if (takeHeart) 
+        {
+            IncreaseLifePoint();
+        }
     }
 
     public void ReduceLifePoint()
     {
-        lifePoints--;
-        UpdateLifeText();
-        if (lifePoints <= 0)
+        if (lifePoints > 0)
         {
-            GameOver();
+            lifePoints--;
+            Debug.Log("Life Point Reduced!");
+            UpdateHearts();
+
+            if (lifePoints < 1)
+            {
+                GameOver();
+            }
         }
     }
 
-    void UpdateLifeText()
+    public void IncreaseLifePoint()
     {
-        if (lifeText != null)
+        if (lifePoints < maxLifePoints)
         {
-            lifeText.text = "Life: " + lifePoints.ToString();
+            lifePoints++;
+            Debug.Log("Life Point Increased!");
+            UpdateHearts();
+        }
+    }
+
+    void UpdateHearts()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < lifePoints)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+
+
+            hearts[i].enabled = (i < maxLifePoints);
         }
     }
 
     void GameOver()
     {
-        // Handle game over logic here
+        // Logic for game over
         Debug.Log("Game Over!");
     }
 }

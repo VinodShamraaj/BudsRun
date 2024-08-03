@@ -20,6 +20,35 @@ public class LifePointManager : MonoBehaviour
 
     }
 
+    void UpdateHearts()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < lifePoints)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+
+            hearts[i].enabled = (i < maxLifePoints);
+        }
+    }
+
+    private void Awake()
+    {
+        ManageSingleton();
+    }
+
+    private void ManageSingleton()
+    {
+
+    }
+
+
+
     void Update()
     {
 
@@ -63,26 +92,13 @@ public class LifePointManager : MonoBehaviour
         }
     }
 
-    void UpdateHearts()
-    {
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            if (i < lifePoints)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-
-            hearts[i].enabled = (i < maxLifePoints);
-        }
-    }
+   
 
     void GameOver()
     {
         // Logic for game over
         Debug.Log("Game Over!");
+
+        // frame to final score
     }
 }

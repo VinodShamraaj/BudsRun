@@ -9,10 +9,21 @@ public class PowerUpSpawner : MonoBehaviour
     public float powerUpSpeed = 6f;
 
     private float timeUntilSpawn;
+    private ObstacleSpawner obstacleSpawner;
+
+    private void Awake()
+    {
+        obstacleSpawner = GetComponent<ObstacleSpawner>();
+    }
 
     private void Update()
     {
         SpawnLoop();
+    }
+
+    public void SetPowerUpSpeed(float speed)
+    {
+        powerUpSpeed = speed;
     }
 
     private void SpawnLoop()

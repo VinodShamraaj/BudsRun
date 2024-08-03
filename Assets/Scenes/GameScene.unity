@@ -782,6 +782,7 @@ MonoBehaviour:
   powerUpPrefabs:
   - {fileID: 1307152302495313435, guid: 9f38d686aacbbce48b42686b9e955520, type: 3}
   - {fileID: 7484313012998261926, guid: 8ac51cf20cdc8d745a1f8a8eafe7f06b, type: 3}
+  - {fileID: 7484313012998261926, guid: 5b11232f4c87bd345af6f3f8cef7f38a, type: 3}
   - {fileID: 7484313012998261926, guid: 6b06d7239e5a9384c82a7e9baa0cfbbd, type: 3}
   heightRange: 3
   powerUpSpawnTime: 10
@@ -801,8 +802,9 @@ MonoBehaviour:
   pickupPrefabs:
   - {fileID: 6094365794367545090, guid: 9468b45973e2ad849945542d079e686f, type: 3}
   heightRange: 3
-  powerUpSpawnTime: 2
-  powerUpSpeed: 4
+  pickupSpawnTime: 4
+  pickupSpeed: 4
+  pickupDelay: 2
 --- !u!1001 &2028865935
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2146395039936921668}
   - component: {fileID: 886089447194588079}
   - component: {fileID: 1193414522628714621}
-  - component: {fileID: 6969672740556684060}
   - component: {fileID: 789610431486381836}
+  - component: {fileID: 7090426606049606402}
   m_Layer: 0
-  m_Name: MoneyGun
+  m_Name: MoneyBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,18 +67,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0108885765, y: 0.0017374009}
+  m_Offset: {x: -0.00004005432, y: 0.0053536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.899, y: 0.764}
+    oldSize: {x: 1.0285715, y: 1.0285715}
     newSize: {x: 17.98, y: 15.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1297443, y: 1.0000001}
+  m_Size: {x: 1.0742962, y: 1.0458052}
   m_EdgeRadius: 0
 --- !u!212 &1193414522628714621
 SpriteRenderer:
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf5978856b27bd3439ea19dcb83ea51f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c69f5a80f23745e47b1c8f582a8d55af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,23 +132,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6969672740556684060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7484313012998261926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475b18af85af64144bfca6d8c47b0b1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 5
-  distanceMagnet: 5
-  coinSpeed: 0.3
-  soundManager: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
-  player: {fileID: 5593679129707949480, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
 --- !u!50 &789610431486381836
 Rigidbody2D:
   serializedVersion: 4
@@ -176,3 +159,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &7090426606049606402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7484313012998261926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0cf66f8aa41814db79ae9c9df2b4f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
+  pickupSpawnTime: 1
+  soundManager: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}

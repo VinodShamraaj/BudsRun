@@ -52,8 +52,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ToggleCollision()
+    public void SetCollision(bool collision)
     {
-        isCollision = !isCollision;
+        isCollision = collision;
     }
 }

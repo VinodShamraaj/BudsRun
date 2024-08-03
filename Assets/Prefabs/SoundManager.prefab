@@ -63,6 +63,12 @@ MonoBehaviour:
   hitSoundVolume: 1
   powerUpSound: {fileID: 8300000, guid: f5c25c6b78fce5940a98f659fde7c9f4, type: 3}
   powerUpSoundVolume: 0.113
+  hurtSound:
+  - {fileID: 8300000, guid: 690962a85885bf04ca57e00231e61ebd, type: 3}
+  - {fileID: 8300000, guid: 690962a85885bf04ca57e00231e61ebd, type: 3}
+  hurtSoundVolume: 1
+  dieSound: {fileID: 8300000, guid: ecaed420e6949ac438e4e7e445fa0448, type: 3}
+  dieSoundVolume: 0.134
   menuClick: {fileID: 8300000, guid: 7293f5e8d629de74d8a5e8e1b6bc605c, type: 3}
   menuClickVolume: 0.117
 --- !u!82 &1391812547103732573

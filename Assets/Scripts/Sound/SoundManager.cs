@@ -5,6 +5,9 @@ public class SoundManager : MonoBehaviour
     private static SoundManager instance;
     private static AudioSource audioSource;
 
+    [Header("Master Volume")]
+    [SerializeField] private float masterVolume = 1f;
+
     [Header("Music")]
     [SerializeField] private AudioClip mainMenuMusic;
     [SerializeField][Range(0f, 1f)] private float mainMenuMusicVolume = 1f;
@@ -26,6 +29,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float hitSoundVolume = 1f;
     [SerializeField] private AudioClip powerUpSound;
     [SerializeField][Range(0f, 1f)] private float powerUpSoundVolume = 1f;
+    [SerializeField] private AudioClip[] hurtSound = new AudioClip[0];
+    [SerializeField][Range(0f, 1f)] private float hurtSoundVolume = 1f;
+    [SerializeField] private AudioClip dieSound;
+    [SerializeField][Range(0f, 1f)] private float dieSoundVolume = 1f;
 
     [Header("Menu")]
     [SerializeField] private AudioClip menuClick;
@@ -95,23 +102,44 @@ public class SoundManager : MonoBehaviour
     {
         PlayClip(powerUpSound, powerUpSoundVolume);
     }
+    public void PlayHurtSound()
+    {
+        AudioClip randomSound = hurtSound[Random.Range(0, hurtSound.Length)];
+
+        PlayClip(randomSound, hurtSoundVolume);
+    }
+
+    public void PlayDieSound()
+    {
+        PlayClip(dieSound, dieSoundVolume);
+    }
 
     public void PlayMenuClick()
     {
         PlayClip(menuClick, menuClickVolume);
     }
 
-    private static void PlayClip(AudioClip clip, float volume)
+    public float GetMasterVolume()
     {
-        Vector3 cameraPos = Camera.main.transform.position;
-        AudioSource.PlayClipAtPoint(clip, cameraPos, volume);
+        return masterVolume;
     }
 
-    private static void PlayBackgroundMusic(AudioClip clip, float volume)
+    public void SetMasterVolume(float volume)
+    {
+        masterVolume = volume;
+    }
+
+    private void PlayClip(AudioClip clip, float volume)
+    {
+        Vector3 cameraPos = Camera.main.transform.position;
+        AudioSource.PlayClipAtPoint(clip, cameraPos, volume * masterVolume);
+    }
+
+    private void PlayBackgroundMusic(AudioClip clip, float volume)
     {
         audioSource.loop = true;
         audioSource.clip = clip;
-        audioSource.volume = volume;
+        audioSource.volume = volume * masterVolume;
         audioSource.Play();
     }
 }

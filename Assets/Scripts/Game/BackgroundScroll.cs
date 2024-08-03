@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BackgroundScroll : MonoBehaviour
@@ -8,7 +6,7 @@ public class BackgroundScroll : MonoBehaviour
 
     [SerializeField]
     private Renderer bgRenderer;
-    private float speedRatio = 0.042f;
+    private float speedRatio = 0.0105f;
 
     void Update()
     {

@@ -10,9 +10,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private SoundManager gameSound = null;
 
-    
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +21,6 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void SetVolume(float volume) {

@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour
     {
         gameTimer += Time.deltaTime;
 
-        Debug.Log(gameTimer);
-
         if (gameTimer > difficultyIncreaseTimer){
             IncreaseDifficulty();
             gameTimer = 0f;

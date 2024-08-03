@@ -20,12 +20,14 @@ public class PlayerMovement : MonoBehaviour
     private float groundedRadius = 0.2f;
     private float jumpTimeCounter = 0;
     private Rigidbody2D rb;
+    private Animator animator;
     private Vector3 velocity = Vector3.zero;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
@@ -59,22 +61,32 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && jumpStart)
         {
+            animator.SetBool("IsJump", true);
             isJumping = true;
+            
+
             jumpTimeCounter = jumpTime;
 
             isGrounded = false;
             rb.AddForce(new Vector2(0f, jumpForce));
         }
 
-        if (jumpHold){
-            if (jumpTimeCounter > 0 && isJumping){
+        if (jumpHold)
+        {
+            if (jumpTimeCounter > 0 && isJumping)
+            {
                 rb.AddForce(new Vector2(0f, jumpForce));
                 jumpTimeCounter -= Time.deltaTime;
             }
+            else{
+                animator.SetBool("IsJump", false);
+            }
         }
 
-        if (jumpEnd){
+        if (jumpEnd)
+        {
             isJumping = false;
+            animator.SetBool("IsJump", false);
         }
     }
 }

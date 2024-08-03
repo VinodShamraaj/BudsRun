@@ -5,6 +5,8 @@ public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
     [SerializeField] float duration = 5f;
     [SerializeField] float distanceMagnet = 5f;
     [SerializeField] float coinSpeed = 0.2f;
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private PlayerController player;
 
     private bool hasPickup = false;
 
@@ -17,6 +19,7 @@ public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
     {
         if (hasPickup && duration < 0)
         {
+            soundManager.PlayGameplayMusic();
             hasPickup = true;
             gameObject.SetActive(false);
             Destroy(gameObject);
@@ -29,11 +32,11 @@ public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
 
             foreach (CoinPickup coin in coinPickupList)
             {
-                float distance = Vector2.Distance(gameObject.transform.position, coin.transform.position);
+                float distance = Vector3.Distance(player.transform.position, coin.transform.position);
 
                 if (distance < distanceMagnet)
                 {
-                    coin.transform.position = Vector2.MoveTowards(coin.transform.position, gameObject.transform.position, coinSpeed);
+                    coin.transform.position = Vector3.MoveTowards(coin.transform.position, player.transform.position, coinSpeed);
                 }
             }
             duration = duration - Time.deltaTime;
@@ -44,6 +47,7 @@ public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
     {
         if (collision.CompareTag("Player"))
         {
+            soundManager.PlayPowerUpMusic();
             hasPickup = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }

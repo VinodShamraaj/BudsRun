@@ -6,11 +6,31 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public int score = 0; 
-    public Text scoreText; 
+    public Text scoreText;
+    private static SoundManager instance;
+
 
     void Start()
     {
         UpdateScoreText();
+    }
+
+    private void Awake()
+    {
+        ManageSingleton();
+    }
+
+    private void ManageSingleton()
+    {
+        if (instance != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public void AddScore(int points)

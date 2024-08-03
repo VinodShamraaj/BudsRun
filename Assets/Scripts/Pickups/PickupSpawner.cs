@@ -4,13 +4,18 @@ public class PickupSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] pickupPrefabs;
     [SerializeField][Range(0, 5f)] private float heightRange = 3;
-
-    public float pickupSpawnTime = 4f;
-    public float pickupSpeed = 4f;
-    public float pickupDelay = 2f;
+    [SerializeField] private float pickupSpawnTime = 4f;
+    [SerializeField] private float pickupSpeed = 4f;
+    [SerializeField] private float pickupDelay = 2f;
 
     private float timeUntilSpawn;
     private float startTime;
+    private float originalSpawnTime;
+
+    private void Awake()
+    {
+        originalSpawnTime = pickupSpawnTime;
+    }
 
     private void Update()
     {
@@ -24,9 +29,20 @@ public class PickupSpawner : MonoBehaviour
         }
     }
 
+
     public void SetPickupSpeed(float speed)
     {
         pickupSpeed = speed;
+    }
+
+    public float GetOriginalPickupSpawnTime()
+    {
+        return originalSpawnTime;
+    }
+
+    public void SetPickupSpawnTime(float spawnTime)
+    {
+        pickupSpawnTime = spawnTime;
     }
 
     private void SpawnLoop()

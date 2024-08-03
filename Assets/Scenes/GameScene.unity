@@ -782,6 +782,7 @@ MonoBehaviour:
   powerUpPrefabs:
   - {fileID: 1307152302495313435, guid: 9f38d686aacbbce48b42686b9e955520, type: 3}
   - {fileID: 7484313012998261926, guid: 8ac51cf20cdc8d745a1f8a8eafe7f06b, type: 3}
+  - {fileID: 7484313012998261926, guid: 5b11232f4c87bd345af6f3f8cef7f38a, type: 3}
   - {fileID: 7484313012998261926, guid: 6b06d7239e5a9384c82a7e9baa0cfbbd, type: 3}
   heightRange: 3
   powerUpSpawnTime: 10

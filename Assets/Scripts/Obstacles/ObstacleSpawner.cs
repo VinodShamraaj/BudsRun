@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
@@ -9,9 +7,18 @@ public class ObstacleSpawner : MonoBehaviour
     public float obstacleSpawnTime = 2f;
     public float obstacleSpeed = 2f;
 
-    public float minObstacleSpawnTime = 2f;    
+    public float minObstacleSpawnTime = 2f;
 
     private float timeUntilSpawn;
+    private PowerUpSpawner powerUpSpawner;
+    private PickupSpawner pickupSpawner;
+
+    private void Awake()
+    {
+        powerUpSpawner = GetComponent<PowerUpSpawner>();
+        pickupSpawner = GetComponent<PickupSpawner>();
+
+    }
 
     private void Update()
     {
@@ -40,17 +47,23 @@ public class ObstacleSpawner : MonoBehaviour
         obstacleRB.velocity = Vector2.left * obstacleSpeed;
     }
 
-    public void SetObstacleSpeed(float speed){
+    public void SetObstacleSpeed(float speed)
+    {
         obstacleSpeed = speed;
+        powerUpSpawner.SetPowerUpSpeed(speed);
+        pickupSpawner.SetPickupSpeed(speed);
     }
 
-    public void SetObstacleSpawnTime(float spawnTime){
-        if (spawnTime<= minObstacleSpawnTime){
+    public void SetObstacleSpawnTime(float spawnTime)
+    {
+        if (spawnTime <= minObstacleSpawnTime)
+        {
             obstacleSpawnTime = minObstacleSpawnTime;
         }
-        else{
+        else
+        {
             obstacleSpawnTime = spawnTime;
         }
-        
+
     }
 }

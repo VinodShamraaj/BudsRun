@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 5
   distanceMagnet: 5
-  coinSpeed: 1
+  coinSpeed: 0.3
   soundManager: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
   player: {fileID: 5593679129707949480, guid: b378a44a7937ed64da8e8c4cb17ad22d, type: 3}
 --- !u!50 &789610431486381836

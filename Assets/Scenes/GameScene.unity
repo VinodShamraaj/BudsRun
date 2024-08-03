@@ -801,8 +801,9 @@ MonoBehaviour:
   pickupPrefabs:
   - {fileID: 6094365794367545090, guid: 9468b45973e2ad849945542d079e686f, type: 3}
   heightRange: 3
-  powerUpSpawnTime: 2
-  powerUpSpeed: 4
+  pickupSpawnTime: 4
+  pickupSpeed: 4
+  pickupDelay: 2
 --- !u!1001 &2028865935
 PrefabInstance:
   m_ObjectHideFlags: 0

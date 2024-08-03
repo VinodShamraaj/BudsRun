@@ -129,6 +129,7 @@ public class SoundManager : MonoBehaviour
     public void SetMasterVolume(float volume)
     {
         masterVolume = volume;
+        AudioListener.volume = volume;
     }
 
     public void PauseMusic()

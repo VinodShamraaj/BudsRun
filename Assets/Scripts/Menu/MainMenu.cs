@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,8 +11,10 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(gameSound != null) {
+        if (gameSound != null)
+        {
             gameSound.PlayMainMenuMusic();
+            SetVolume(gameSound.GetMasterVolume());
         }
     }
 
@@ -23,10 +23,12 @@ public class MainMenu : MonoBehaviour
     {
     }
 
-    public void SetVolume(float volume) {
+    public void SetVolume(float volume)
+    {
         // Not sure how audio works here
-        AudioListener.volume = volume;
         volumeTextValue.text = volume.ToString("0.0");
+        volumeSlider.value = volume;
         gameSound.SetMasterVolume(volume);
+
     }
 }

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b18dea1f60b824090ff7d792def177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinScore: 50
+  coinScore: 1000
   scoreManger: {fileID: 7246295532246982087, guid: 18bbd8218c4cc41a896a73f9431f2bdd, type: 3}
   soundManager: {fileID: 894189284480379406, guid: 26eeab5a0e880ed409439dd802c5b64b, type: 3}
 --- !u!212 &7526332805914387434

@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        lifePointManager = GameObject.Find("LifePointManager").GetComponent<LifePointManager>();
+       
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameTimer = 0f;
         aliveTime = 0f;

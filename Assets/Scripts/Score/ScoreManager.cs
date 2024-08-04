@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if (obstacleSpawner != null && obstacleSpawner.obstacleSpeed > 0)
+        if (obstacleSpawner != null && obstacleSpawner.obstacleSpeed > 0 && Time.timeScale != 0)
         {
             distance = (int)(playerController.aliveTime / 60) + 1;
             AddScore(distance);

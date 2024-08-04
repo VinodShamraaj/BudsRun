@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int distanceBonus = 200;
     [SerializeField] private PlayerController playerController;
 
-    public float score = 0;
+    public int score;
     public Text scoreText;
     public Font customFont;
     private static SoundManager instance;
@@ -19,7 +19,8 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         scoreText.font = customFont;
-        scoreText.text = "Score: 0";
+        scoreText.text = "0";
+        score = 0;
 
         UpdateScoreText();
     }
@@ -102,7 +103,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = score.ToString();
         }
     }
 

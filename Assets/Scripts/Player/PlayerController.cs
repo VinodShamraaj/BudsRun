@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -59,9 +60,18 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.tag == "Obstacle" && isCollision)
         {
-            soundManager.PlayHitSound();
             lifePointManager.ReduceLifePoint();
-            soundManager.PlayHurtSound();
+
+            if (lifePointManager.lifePoints >0){
+                soundManager.PlayHitSound();
+                soundManager.PlayHurtSound();
+            }
+            else{
+                soundManager.PlayDieSound();
+                soundManager.PlayEndingMusic();
+                SceneManager.LoadScene(3);
+            }
+            
             // Handle Collission stuff here
             Destroy(col.gameObject);
         }

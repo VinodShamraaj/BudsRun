@@ -11,6 +11,9 @@ public class DisplayHighscores : MonoBehaviour
 
     [SerializeField] private Text firstName = null;
     [SerializeField] private Text firstScore = null;
+    [SerializeField] private Text score = null;
+
+    private ScoreManager scoreManager;
 
     void Start() //Fetches the Data at the beginning
     {
@@ -20,7 +23,13 @@ public class DisplayHighscores : MonoBehaviour
         }
         myScores = GetComponent<HighScores>();
         StartCoroutine("RefreshHighscores");
+
+        if(score) {
+            scoreManager = FindObjectOfType<ScoreManager>();
+            score.text = scoreManager.score.ToString();
+        }
     }
+
     public void SetScoresToMenu(PlayerScore[] highscoreList) //Assigns proper name and score for each text value
     {
         for (int i = 0; i < rNames.Length;i ++)

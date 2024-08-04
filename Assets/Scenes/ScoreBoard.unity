@@ -798,7 +798,7 @@ MonoBehaviour:
   obstacleBonus: 20
   distanceBonus: 200
   score: 0
-  scoreText: {fileID: 158878978}
+  scoreText: {fileID: 0}
   customFont: {fileID: 0}
 --- !u!1 &653714360
 GameObject:

@@ -63,7 +63,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Replay()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("GameScene");
     }
 
     public void Setting()
@@ -95,6 +95,4 @@ public class PauseMenu : MonoBehaviour
         sound.UnMuteMusic();
         soundButton.image.sprite = soundOnSprite;
     }
-
-
 }

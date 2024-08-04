@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float difficultyIncreaseTimer = 60f;
     [SerializeField] private ObstacleSpawner obstacleSpawner;
     [SerializeField] private BackgroundScroll backgroundScroll;
+    private SoundManager soundManager;
+    
     private bool isCollision = true;
 
     private float gameTimer;
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         gameTimer = 0f;
     }
 
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.tag == "Obstacle" && isCollision)
         {
+            soundManager.PlayHitSound();
             // Handle Collission stuff here
             Destroy(col.gameObject);
         }

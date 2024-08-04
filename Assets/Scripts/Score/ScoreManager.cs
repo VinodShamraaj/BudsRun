@@ -31,10 +31,9 @@ public class ScoreManager : MonoBehaviour
     {
         if (obstacleSpawner != null && obstacleSpawner.obstacleSpeed > 0)
         {
-            distance = (int)(playerController.aliveTime * obstacleSpawner.obstacleSpeed);
-            score = distance;
+            distance = (int)(playerController.aliveTime / 60) + 1;
+            AddScore(distance);
         }
-        UpdateScoreText();
     }
 
 

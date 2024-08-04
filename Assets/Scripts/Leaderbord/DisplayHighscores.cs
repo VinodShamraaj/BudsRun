@@ -9,8 +9,8 @@ public class DisplayHighscores : MonoBehaviour
     public Text[] rScores;
     HighScores myScores;
 
-    [SerializeField] private Text firstName;
-    [SerializeField] private Text firstScore;
+    [SerializeField] private Text firstName = null;
+    [SerializeField] private Text firstScore = null;
 
     void Start() //Fetches the Data at the beginning
     {
@@ -32,8 +32,10 @@ public class DisplayHighscores : MonoBehaviour
                 rNames[i].text = highscoreList[i].username;
             }
 
-            firstName.text = rNames[0].text;
-            firstScore.text = rScores[0].text;
+            if(firstName && firstScore) {
+                firstName.text = rNames[0].text;
+                firstScore.text = rScores[0].text;
+            }
         }
     }
     IEnumerator RefreshHighscores() //Refreshes the scores every 30 seconds

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 4e92ecfbddc531644a763092c709cf37
   - enabled: 1
+    path: Assets/Scenes/MainMenuScoreBoard.unity
+    guid: 805ba66e862c36f4ba76bdd82596ac77
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: ae409b4db17619440806bdc464795c53
   m_configObjects: {}

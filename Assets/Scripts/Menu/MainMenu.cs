@@ -34,6 +34,14 @@ public class MainMenu : MonoBehaviour
     }
 
     public void StartGame(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void OpenLeaderboard(){
+        SceneManager.LoadScene("MainMenuScoreBoard");
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 }

@@ -50,11 +50,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525187475dc6f4b3ebc36b91482c3249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
   sound: {fileID: 0}
-  soundButtonImage: {fileID: 4854386637521196644}
+  soundButton: {fileID: 2812257211555412498}
+  restartButton: {fileID: 449791178269254304}
+  settingButton: {fileID: 5759462545748196220}
   soundOffSprite: {fileID: -1741654567, guid: b39a16dd3634a45e7836785d5f8e8a37, type: 3}
   soundOnSprite: {fileID: -804744289, guid: b39a16dd3634a45e7836785d5f8e8a37, type: 3}
+  isSoundOn: 1
 --- !u!1 &1013274371281244107
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +176,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7982775221054423762}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7836127019962223348}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1534613416178908525
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +320,7 @@ GameObject:
   - component: {fileID: 4854386637521196644}
   - component: {fileID: 2812257211555412498}
   m_Layer: 5
-  m_Name: 'Sound On/Off Button '
+  m_Name: 'Sound Button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,13 +427,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7836127019962223348}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: SoundButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -696,13 +710,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7836127019962223348}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Setting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -721,7 +735,7 @@ GameObject:
   - component: {fileID: 8441004974641610541}
   - component: {fileID: 449791178269254304}
   m_Layer: 5
-  m_Name: Replay Button
+  m_Name: Restart Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -827,4 +841,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8441004974641610541}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7836127019962223348}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -7,11 +7,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float difficultyIncreaseTimer = 60f;
     [SerializeField] private ObstacleSpawner obstacleSpawner;
     [SerializeField] private BackgroundScroll backgroundScroll;
+
     private SoundManager soundManager;
     
-    private bool isCollision = true;
+    public float aliveTime;
 
+    private bool isCollision = true;
     private float gameTimer;
+    
 
 
     // Start is called before the first frame update
@@ -19,12 +22,14 @@ public class PlayerController : MonoBehaviour
     {
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         gameTimer = 0f;
+        aliveTime = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
         gameTimer += Time.deltaTime;
+        aliveTime += Time.deltaTime;
 
         if (gameTimer > difficultyIncreaseTimer){
             IncreaseDifficulty();
@@ -51,6 +56,7 @@ public class PlayerController : MonoBehaviour
         if (col.transform.tag == "Obstacle" && isCollision)
         {
             soundManager.PlayHitSound();
+            soundManager.PlayHurtSound();
             // Handle Collission stuff here
             Destroy(col.gameObject);
         }

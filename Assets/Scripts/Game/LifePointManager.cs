@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 public class LifePointManager : MonoBehaviour
 {
+
+    private static LifePointManager instance;
     public int lifePoints = 3;
     public int maxLifePoints = 3;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+
+    public ScoreManager score;
 
     private void Awake()
     {
@@ -18,7 +22,16 @@ public class LifePointManager : MonoBehaviour
 
     private void ManageSingleton()
     {
-
+        if (instance != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     void Update()
@@ -42,7 +55,6 @@ public class LifePointManager : MonoBehaviour
         if (lifePoints > 0)
         {
             lifePoints--;
-            Debug.Log("Life Point Reduced!");
             Update();
 
             if (lifePoints < 1)
@@ -58,23 +70,20 @@ public class LifePointManager : MonoBehaviour
         if (lifePoints < maxLifePoints)
         {
             lifePoints++;
-            Debug.Log("Life Point Increased!");
             Update();
         }
 
         else
         {
-            Debug.Log("Maximum Health");
+            score.AddScore(50);
         }
 
 
     }
 
-
-
     void GameOver()
     {
-        Debug.Log("Game Over!");
+       
 
     }
 }

@@ -1,23 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
 
-    [SerializeField] GameObject pauseMenu;
+    //[SerializeField] GameObject pauseMenu;
+    //[SerializeField] GameObject pauseButton;
     [SerializeField] SoundManager sound;
 
-    [SerializeField] Image soundButtonImage;
+    [SerializeField] Button soundButton, restartButton, settingButton;
+
     [SerializeField] Sprite soundOffSprite;
     [SerializeField] Sprite soundOnSprite;
-    [SerializeField] Button soundButton, pauseButton, restartButton, settingButton;
+ 
+
+    public bool isSoundOn = true;
 
 
     void Start()
     {
-        soundButton.onClick.AddListener(SoundOn);
+       
+    }
+
+    void Update()
+    {
+      
     }
 
     private void Awake()
@@ -38,45 +46,55 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void Pause()
     {
-        pauseMenu.SetActive(true);
+        //pauseMenu.SetActive(true);
+        //pauseButton.SetActive(false);
         Time.timeScale = 0;
     }
 
-    public void Setting()
+    public void Resume()
     {
-       // return to setting menu
-    }
-
-    void Resume()
-    {
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
+        //pauseButton.SetActive(true);
         Time.timeScale = 1;
 
     }
 
-    void Restart()
+    public void Replay()
     {
-        // restartButton.onClick.AddListener();
+        SceneManager.LoadScene(1);
+    }
+
+    public void Setting()
+    {
+        // return to setting menu
     }
 
 
-    public void SoundOff()
-    {
-        Debug.Log("You have clicked Sound Off");
+    public void SoundButtonClicked() {
+
+        if (isSoundOn)
+            SoundOff();
+        
+        else    
+            SoundOn();     
+    }
+
+    public void SoundOff() {
+        isSoundOn = false;
         sound.MuteMusic();
-        soundButtonImage.sprite = soundOffSprite;
+        soundButton.image.sprite = soundOffSprite;
+       
 
     }
 
     public void SoundOn()
     {
-        Debug.Log("You have clicked Sound On!");
-        sound.PlayGameplayMusic();
-        soundButtonImage.sprite = soundOnSprite;
-
+        isSoundOn = true;
+        sound.UnMuteMusic();
+        soundButton.image.sprite = soundOnSprite;
     }
+
 
 }

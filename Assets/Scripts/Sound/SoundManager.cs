@@ -44,7 +44,7 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         ManageSingleton();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = FindObjectOfType<AudioSource>();
     }
 
     private void ManageSingleton()

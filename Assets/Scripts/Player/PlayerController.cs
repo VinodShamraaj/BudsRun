@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BackgroundScroll backgroundScroll;
 
     private SoundManager soundManager;
+    private SpriteRenderer spriteRenderer;
     
     public float aliveTime;
 
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         gameTimer = 0f;
         aliveTime = 0f;
     }
@@ -66,4 +68,13 @@ public class PlayerController : MonoBehaviour
     {
         isCollision = collision;
     }
+
+    public void SetInvincibilityEffect(){
+        spriteRenderer.color = Color.gray;
+    }
+
+    public void ResetEffect(){
+        spriteRenderer.color = Color.white;
+    }
+
 }

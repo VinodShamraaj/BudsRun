@@ -21,6 +21,7 @@ public class PowerUpFlightTicket : MonoBehaviour, IPowerUpDuration
             soundManager.PlayGameplayMusic();
             hasPickup = true;
             playerController.SetCollision(true);
+            playerController.ResetEffect();
             gameObject.SetActive(false);
             Destroy(gameObject);
         }
@@ -38,6 +39,7 @@ public class PowerUpFlightTicket : MonoBehaviour, IPowerUpDuration
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             playerController = collision.GetComponent<PlayerController>();
             playerController.SetCollision(false);
+            playerController.SetInvincibilityEffect();
             hasPickup = true;
         }
     }

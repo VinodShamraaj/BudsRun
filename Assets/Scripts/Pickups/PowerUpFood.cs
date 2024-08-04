@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class PowerUpFood : MonoBehaviour
 {
-    [SerializeField] LifePointManager lifePointManager;
+    private LifePointManager lifePointManager;
+
+    private void Awake()
+    {
+        lifePointManager = FindObjectOfType<LifePointManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

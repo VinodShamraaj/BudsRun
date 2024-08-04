@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
             else{
                 soundManager.PlayDieSound();
                 soundManager.PlayEndingMusic();
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(4);
             }
             
             // Handle Collission stuff here

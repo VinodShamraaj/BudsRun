@@ -635,7 +635,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 547367308}
-  - component: {fileID: 547367309}
+  - component: {fileID: 547367311}
+  - component: {fileID: 547367310}
   m_Layer: 0
   m_Name: LeaderboardController
   m_TagString: Untagged
@@ -658,7 +659,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &547367309
+--- !u!114 &547367310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -667,17 +668,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 547367307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b5eb224f251d940bd0aac839e7afa3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ef036f43aca77942bbf29baea7974f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  names:
+--- !u!114 &547367311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547367307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4d16d697327b746a4443eaf7377789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rNames:
   - {fileID: 98231733}
   - {fileID: 244151546}
   - {fileID: 1046836008}
   - {fileID: 322926584}
   - {fileID: 1488612552}
   - {fileID: 1075714268}
-  scores:
+  rScores:
   - {fileID: 2101927150}
   - {fileID: 1564994106}
   - {fileID: 1287469878}
@@ -686,7 +699,6 @@ MonoBehaviour:
   - {fileID: 653714362}
   firstName: {fileID: 1960558116}
   firstScore: {fileID: 1620969834}
-  score: {fileID: 0}
 --- !u!1 &653714360
 GameObject:
   m_ObjectHideFlags: 0

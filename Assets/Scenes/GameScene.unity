@@ -302,7 +302,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 000000
+  m_Text: 00000
 --- !u!222 &368398101
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -929,9 +929,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7246295532246982087, guid: 18bbd8218c4cc41a896a73f9431f2bdd, type: 3}
+      propertyPath: score
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246295532246982087, guid: 18bbd8218c4cc41a896a73f9431f2bdd, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 368398100}
+    - target: {fileID: 7246295532246982087, guid: 18bbd8218c4cc41a896a73f9431f2bdd, type: 3}
+      propertyPath: customFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 0f06760ebb07c4011aaa7b8632475050, type: 3}
     - target: {fileID: 7246295532246982087, guid: 18bbd8218c4cc41a896a73f9431f2bdd, type: 3}
       propertyPath: playerController
       value: 

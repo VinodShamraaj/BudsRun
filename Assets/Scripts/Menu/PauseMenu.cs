@@ -59,7 +59,7 @@ public class PauseMenu : MonoBehaviour
 
     void Restart()
     {
-        restartButton.onClick.AddListener();
+        // restartButton.onClick.AddListener();
     }
 
 

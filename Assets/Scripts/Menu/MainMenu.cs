@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
@@ -26,9 +27,13 @@ public class MainMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         // Not sure how audio works here
-        volumeTextValue.text = volume.ToString("0.0");
+        volumeTextValue.text = (volume * 100).ToString("0");
         volumeSlider.value = volume;
         gameSound.SetMasterVolume(volume);
 
+    }
+
+    public void StartGame(){
+        SceneManager.LoadScene(1);
     }
 }

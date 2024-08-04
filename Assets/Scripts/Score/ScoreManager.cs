@@ -1,15 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public float score = 0; 
+    [SerializeField] private int coinScore = 50;
+    [SerializeField] private int obstacleBonus = 20;
+    [SerializeField] private int distanceBonus = 200;
+    [SerializeField] private PlayerController playerController;
+
+    public float score = 0;
     public Text scoreText;
-    public Font customFont; 
+    public Font customFont;
     private static SoundManager instance;
 
+    private int coinCount;
+    private int obstacleCount;
 
     void Start()
     {
@@ -37,6 +42,16 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public void IncrementCoin()
+    {
+        coinCount++;
+    }
+
+    public void IncrementObstacle()
+    {
+        obstacleCount++;
+    }
+
 
     // each time pass obstacle -  add some point
     public void AddScore(int points)
@@ -55,11 +70,33 @@ public class ScoreManager : MonoBehaviour
 
 
     // each time collect coin - multiple point
-     public void MultiplyScore(int times)
+    public void MultiplyScore(int times)
     {
         score *= times;
         UpdateScoreText();
     }
+
+    public float GetCoinScore()
+    {
+        return coinScore;
+    }
+
+    public float GetTotalCoinScore()
+    {
+        return coinScore * coinCount;
+    }
+
+    public float GetTotalDistanceScore()
+    {
+        return distanceBonus;
+
+    }
+
+    public float GetTotalScore()
+    {
+        return GetTotalCoinScore() + GetTotalDistanceScore();
+    }
+
 
     void UpdateScoreText()
     {
@@ -69,6 +106,6 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-   
+
 
 }

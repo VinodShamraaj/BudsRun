@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 547367308}
   - component: {fileID: 547367311}
   - component: {fileID: 547367310}
+  - component: {fileID: 547367312}
   m_Layer: 0
   m_Name: LeaderboardController
   m_TagString: Untagged
@@ -781,6 +782,24 @@ MonoBehaviour:
   - {fileID: 653714362}
   firstName: {fileID: 0}
   firstScore: {fileID: 0}
+--- !u!114 &547367312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547367307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30afeb90611c44f86a98357acd7cecec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinScore: 50
+  obstacleBonus: 20
+  distanceBonus: 200
+  score: 0
+  scoreText: {fileID: 158878978}
+  customFont: {fileID: 0}
 --- !u!1 &653714360
 GameObject:
   m_ObjectHideFlags: 0

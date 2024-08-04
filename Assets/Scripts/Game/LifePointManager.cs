@@ -42,7 +42,8 @@ public class LifePointManager : MonoBehaviour
             img.sprite = emptyHeart;
         }
 
-        for(int i =0; i < lifePoints; i++) {
+        for (int i = 0; i < lifePoints; i++)
+        {
 
             hearts[i].sprite = fullHeart;
 
@@ -72,18 +73,17 @@ public class LifePointManager : MonoBehaviour
             lifePoints++;
             Update();
         }
-
         else
         {
-            score.AddScore(50);
+            if (score != null){
+                score.AddScore(50);
+            }
         }
-
-
     }
 
     void GameOver()
     {
-       
+
 
     }
 }

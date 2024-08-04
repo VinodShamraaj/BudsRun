@@ -6,9 +6,14 @@ public class PowerUpMoneyGun : MonoBehaviour, IPowerUpDuration
     [SerializeField] float distanceMagnet = 5f;
     [SerializeField] float coinSpeed = 0.2f;
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private PlayerController player;
 
+    private PlayerController player;
     private bool hasPickup = false;
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     public bool GetHasPickup()
     {

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b121949d0a666fb4798a5b55ce82e6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePointManager: {fileID: 8347412125455665519, guid: 1ca4fab7f3c764e2ea5e623f47ad8ce7, type: 3}
+  lifePointManager: {fileID: 8733850419938226586, guid: e850488592ca44f2ebc906841cf48cc4, type: 3}
 --- !u!50 &582368217068393561
 Rigidbody2D:
   serializedVersion: 4

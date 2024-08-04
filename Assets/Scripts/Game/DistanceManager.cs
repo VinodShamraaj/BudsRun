@@ -8,12 +8,34 @@ public class Distance : MonoBehaviour
     public Transform player;
     public Text distanceText;
     private Vector3 startPosition;
+    private static Distance instance;
 
     void Start()
     {
         if (player != null)
         {
             startPosition = player.position;
+        }
+
+        Update();
+    }
+
+    private void Awake()
+    {
+        ManageSingleton();
+    }
+
+    private void ManageSingleton()
+    {
+        if (instance != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -32,5 +54,11 @@ public class Distance : MonoBehaviour
         {
             distanceText.text = distance.ToString("F2") + " meters";
         }
+    }
+
+    public void Reset()
+    {
+        startPosition = player.position;
+        Update();
     }
 }

@@ -18,14 +18,15 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private SoundManager gameSound = null;
- 
+    ScoreManager scoreManager;
+
 
     public bool isSoundOn = true;
 
 
     void Start()
     {
-       
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     void Update()
@@ -68,6 +69,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Replay()
     {
+        scoreManager.ResetScore();
         SceneManager.LoadScene("GameScene");
     }
 

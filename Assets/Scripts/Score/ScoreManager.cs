@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public float score = 0;
     public Text scoreText;
     public Font customFont;
-    private static SoundManager instance;
+    private static ScoreManager instance;
     private PlayerController playerController;
     private ObstacleSpawner obstacleSpawner;
 
@@ -23,16 +23,22 @@ public class ScoreManager : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
         obstacleSpawner = FindObjectOfType<ObstacleSpawner>();
 
-        UpdateScoreText();
+        //UpdateScoreText();
     }
 
     private void Update()
     {
-        if (obstacleSpawner != null && obstacleSpawner.obstacleSpeed > 0 && Time.timeScale != 0)
-        {
+        if(Time.timeScale != 0) {
             distance = (int)(playerController.aliveTime / 60) + 1;
             AddScore(distance);
         }
+
+
+        //if (obstacleSpawner != null && obstacleSpawner.obstacleSpeed > 0 && Time.timeScale != 0)
+        //{
+        //    distance = (int)(playerController.aliveTime / 60) + 1;
+        //    AddScore(distance);
+        //}
     }
 
 
@@ -50,6 +56,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -69,7 +76,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
-        UpdateScoreText();
+        //UpdateScoreText();
     }
 
 
@@ -77,7 +84,7 @@ public class ScoreManager : MonoBehaviour
     public void ResetScore()
     {
         score = 0;
-        UpdateScoreText();
+        //UpdateScoreText();
     }
 
 
@@ -85,7 +92,7 @@ public class ScoreManager : MonoBehaviour
     public void MultiplyScore(int times)
     {
         score *= times;
-        UpdateScoreText();
+        //UpdateScoreText();
     }
 
     public int GetCoinCount()
@@ -115,14 +122,13 @@ public class ScoreManager : MonoBehaviour
     }
 
 
-    void UpdateScoreText()
-    {
-        if (scoreText != null)
-        {
-            scoreText.text = score.ToString();
-        }
-    }
-
+    //void UpdateScoreText()
+    //{
+    //    if (scoreText != null)
+    //    {
+    //        scoreText.text = score.ToString();
+    //    }
+    //}
 
 
 }

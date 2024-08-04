@@ -13,6 +13,11 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] Sprite soundOffSprite;
     [SerializeField] Sprite soundOnSprite;
+
+    [Header("Volume Setting")]
+    [SerializeField] private Text volumeTextValue = null;
+    [SerializeField] private Slider volumeSlider = null;
+    [SerializeField] private SoundManager gameSound = null;
  
 
     public bool isSoundOn = true;
@@ -25,7 +30,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-      
+        SetVolume(gameSound.GetMasterVolume());
     }
 
     private void Awake()
@@ -94,5 +99,13 @@ public class PauseMenu : MonoBehaviour
         isSoundOn = true;
         sound.UnMuteMusic();
         soundButton.image.sprite = soundOnSprite;
+    }
+
+    public void SetVolume(float volume)
+    {
+        // Not sure how audio works here
+        volumeTextValue.text = (volume * 100).ToString("0");
+        volumeSlider.value = volume;
+        gameSound.SetMasterVolume(volume);
     }
 }

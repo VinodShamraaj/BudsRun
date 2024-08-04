@@ -22,7 +22,6 @@ public class ScoreManager : MonoBehaviour
     {
         playerController = FindObjectOfType<PlayerController>();
         obstacleSpawner = FindObjectOfType<ObstacleSpawner>();
-        scoreText.text = "Score: 0";
 
         UpdateScoreText();
     }

@@ -5,37 +5,11 @@ using UnityEngine.UI;
 
 public class LifePointManager : MonoBehaviour
 {
-    public int lifePoints = 3; // Current life points
-    public int maxLifePoints = 3; // Maximum life points
-    public bool takeDamage = false;
-    public bool takeHeart = false;
-    public Image[] hearts; // Array of heart UI images
-    public Sprite fullHeart; // Sprite for a full heart
-    public Sprite emptyHeart; // Sprite for an empty heart
-    public Transform player;
-
-    void Start()
-    {
-        UpdateHearts();
-
-    }
-
-    void UpdateHearts()
-    {
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            if (i < lifePoints)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-
-            hearts[i].enabled = (i < maxLifePoints);
-        }
-    }
+    public int lifePoints = 3;
+    public int maxLifePoints = 3;
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
     private void Awake()
     {
@@ -47,19 +21,20 @@ public class LifePointManager : MonoBehaviour
 
     }
 
-
-
     void Update()
     {
 
-        if (takeDamage) 
+        foreach (Image img in hearts)
         {
-            ReduceLifePoint();
+            img.sprite = emptyHeart;
         }
-        if (takeHeart) 
-        {
-            IncreaseLifePoint();
+
+        for(int i =0; i < lifePoints; i++) {
+
+            hearts[i].sprite = fullHeart;
+
         }
+
     }
 
     public void ReduceLifePoint()
@@ -68,13 +43,14 @@ public class LifePointManager : MonoBehaviour
         {
             lifePoints--;
             Debug.Log("Life Point Reduced!");
-            UpdateHearts();
+            Update();
 
             if (lifePoints < 1)
             {
                 GameOver();
             }
         }
+
     }
 
     public void IncreaseLifePoint()
@@ -83,22 +59,22 @@ public class LifePointManager : MonoBehaviour
         {
             lifePoints++;
             Debug.Log("Life Point Increased!");
-            UpdateHearts();
+            Update();
         }
 
         else
         {
             Debug.Log("Maximum Health");
         }
+
+
     }
 
-   
+
 
     void GameOver()
     {
-        // Logic for game over
         Debug.Log("Game Over!");
 
-        // frame to final score
     }
 }

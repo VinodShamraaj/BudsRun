@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float difficultyIncreaseTimer = 60f;
     [SerializeField] private ObstacleSpawner obstacleSpawner;
     [SerializeField] private BackgroundScroll backgroundScroll;
-
     private SoundManager soundManager;
+    private LifePointManager lifePointManager;
     private SpriteRenderer spriteRenderer;
     
     public float aliveTime;
@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
         if (col.transform.tag == "Obstacle" && isCollision)
         {
             soundManager.PlayHitSound();
+            lifePointManager.ReduceLifePoint();
             soundManager.PlayHurtSound();
             // Handle Collission stuff here
             Destroy(col.gameObject);

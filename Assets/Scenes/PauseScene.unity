@@ -321,7 +321,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 485157023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 525187475dc6f4b3ebc36b91482c3249, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &485157023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,6 +427,10 @@ MonoBehaviour:
   soundButtonImage: {fileID: 485157023}
   soundOffSprite: {fileID: -1741654567, guid: b39a16dd3634a45e7836785d5f8e8a37, type: 3}
   soundOnSprite: {fileID: -804744289, guid: b39a16dd3634a45e7836785d5f8e8a37, type: 3}
+  soundButton: {fileID: 0}
+  pauseButton: {fileID: 0}
+  restartButton: {fileID: 0}
+  settingButton: {fileID: 0}
 --- !u!1 &1153811631
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,24 +6,37 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int coinScore = 50;
     [SerializeField] private int obstacleBonus = 20;
     [SerializeField] private int distanceBonus = 200;
-    [SerializeField] private PlayerController playerController;
 
-    public int score;
+    public float score = 0;
     public Text scoreText;
     public Font customFont;
     private static SoundManager instance;
+    private PlayerController playerController;
+    private ObstacleSpawner obstacleSpawner;
 
     private int coinCount;
     private int obstacleCount;
+    private int distance;
 
     void Start()
     {
-        scoreText.font = customFont;
-        scoreText.text = "0";
-        score = 0;
+        playerController = FindObjectOfType<PlayerController>();
+        obstacleSpawner = FindObjectOfType<ObstacleSpawner>();
+        scoreText.text = "Score: 0";
 
         UpdateScoreText();
     }
+
+    private void Update()
+    {
+        if (obstacleSpawner != null && obstacleSpawner.obstacleSpeed > 0)
+        {
+            distance = (int)(playerController.aliveTime * obstacleSpawner.obstacleSpeed);
+            score = distance;
+        }
+        UpdateScoreText();
+    }
+
 
     private void Awake()
     {
@@ -75,6 +88,11 @@ public class ScoreManager : MonoBehaviour
     {
         score *= times;
         UpdateScoreText();
+    }
+
+    public int GetCoinCount()
+    {
+        return coinCount;
     }
 
     public float GetCoinScore()

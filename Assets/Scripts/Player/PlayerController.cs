@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BackgroundScroll backgroundScroll;
     private SoundManager soundManager;
     private LifePointManager lifePointManager;
+    private ScoreManager scoreManager;
     private SpriteRenderer spriteRenderer;
     
     public float aliveTime;
